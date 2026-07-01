@@ -34,20 +34,34 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     setError(null);
     await new Promise((resolve) => window.setTimeout(resolve, 650));
 
-    const matchedUser = mockUsers.find(
-      (candidate) =>
-        candidate.email.toLowerCase() === credentials.email.toLowerCase() &&
-        candidate.password === credentials.password,
-    );
+    const matchedUser = mockUsers.find((candidate) => {
+      if (credentials.type === "staff") {
+        return (
+          candidate.role !== "resident" &&
+          candidate.email.toLowerCase() === credentials.email.toLowerCase() &&
+          candidate.password === credentials.password
+        );
+      }
+
+      return (
+        candidate.role === "resident" &&
+        candidate.customerCode === credentials.customerCode &&
+        candidate.accountType === credentials.accountType &&
+        candidate.password === credentials.password
+      );
+    });
 
     if (!matchedUser) {
-      const message = "We could not match those credentials. Please check your email and password.";
+      const message =
+        credentials.type === "staff"
+          ? "We could not match those credentials. Please check your email and password."
+          : "We could not match those resident credentials. Please check your Customer Code, account type, and password.";
       setStatus("error");
       setError(message);
       throw new Error(message);
     }
 
-    const { password, ...safeUser } = matchedUser;
+    const { password, customerCode, accountType, ...safeUser } = matchedUser;
     setUser(safeUser);
     setStatus("authenticated");
     const storage = credentials.rememberMe ? window.localStorage : window.sessionStorage;

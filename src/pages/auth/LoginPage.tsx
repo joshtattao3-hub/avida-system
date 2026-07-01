@@ -2,13 +2,13 @@ import { FormCard } from "@/components/auth/FormCard";
 import { LoginForm } from "@/components/auth/LoginForm";
 import { AuthLayout } from "@/layouts/AuthLayout";
 
-export function LoginPage() {
+export function StaffLoginPage() {
   return (
     <AuthLayout>
       <FormCard
-        eyebrow="Secure sign in"
+        eyebrow="Staff portal"
         title="Welcome back"
-        description="Access the right Avida workspace for your resident or operations role."
+        description="Access the Avida workspace for administrators and operations staff."
       >
         <LoginForm />
       </FormCard>

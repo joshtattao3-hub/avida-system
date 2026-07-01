@@ -24,7 +24,7 @@ export function CTASection() {
             </p>
           </div>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-            <Link to="/login" className={buttonVariants({ variant: "gold", size: "lg" })}>
+            <Link to="/resident-login" className={buttonVariants({ variant: "gold", size: "lg" })}>
               Resident Login
               <ArrowRight className="h-5 w-5" />
             </Link>

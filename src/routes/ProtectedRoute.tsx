@@ -12,7 +12,8 @@ export function ProtectedRoute({ allowedRoles, children }: ProtectedRouteProps) 
   const location = useLocation();
 
   if (!user) {
-    return <Navigate to="/login" replace state={{ from: location.pathname }} />;
+    const loginPath = allowedRoles.length === 1 && allowedRoles[0] === "resident" ? "/resident-login" : "/login";
+    return <Navigate to={loginPath} replace state={{ from: location.pathname }} />;
   }
 
   if (!allowedRoles.includes(user.role)) {

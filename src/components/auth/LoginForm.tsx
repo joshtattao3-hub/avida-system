@@ -27,7 +27,7 @@ export function LoginForm() {
   const onSubmit = handleSubmit(async (values) => {
     clearError();
     try {
-      const user = await login(values);
+      const user = await login({ type: "staff", ...values });
       redirectToDashboard(navigate, user);
     } catch {
       return;
@@ -37,7 +37,7 @@ export function LoginForm() {
   return (
     <form className="space-y-5" onSubmit={onSubmit} noValidate>
       <FormError message={error} />
-      <EmailInput placeholder="resident@avida.com" error={errors.email?.message} {...register("email")} />
+      <EmailInput placeholder="admin@avida.com" error={errors.email?.message} {...register("email")} />
       <PasswordInput
         placeholder="Enter your password"
         error={errors.password?.message}
@@ -63,8 +63,8 @@ export function LoginForm() {
         <ArrowRight className="h-4 w-4" aria-hidden="true" />
       </PrimaryButton>
       <div className="rounded-2xl bg-secondary/5 p-4 text-sm leading-6 text-secondary/64">
-        Try <strong>resident@avida.com</strong>, <strong>pmo@avida.com</strong>, or <strong>admin@avida.com</strong> with
-        password <strong>password123</strong>.
+        Try <strong>pmo@avida.com</strong>, <strong>reception@avida.com</strong>, <strong>accounting@avida.com</strong>, or{" "}
+        <strong>admin@avida.com</strong> with password <strong>password123</strong>.
       </div>
     </form>
   );

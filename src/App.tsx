@@ -4,7 +4,8 @@ import { ProtectedRoute } from "@/routes/ProtectedRoute";
 import { MainLayout } from "@/layouts/MainLayout";
 import { EmailVerificationPage } from "@/pages/auth/EmailVerificationPage";
 import { ForgotPasswordPage } from "@/pages/auth/ForgotPasswordPage";
-import { LoginPage } from "@/pages/auth/LoginPage";
+import { StaffLoginPage } from "@/pages/auth/LoginPage";
+import { ResidentLoginPage } from "@/pages/auth/ResidentLoginPage";
 import { ResetPasswordPage } from "@/pages/auth/ResetPasswordPage";
 import { LandingPage } from "@/pages/LandingPage";
 import { RoleDashboardPage } from "@/pages/RoleDashboardPage";
@@ -23,7 +24,8 @@ export default function App() {
             </MainLayout>
           }
         />
-        <Route path="/login" element={<LoginPage />} />
+        <Route path="/login" element={<StaffLoginPage />} />
+        <Route path="/resident-login" element={<ResidentLoginPage />} />
         <Route path="/forgot-password" element={<ForgotPasswordPage />} />
         <Route path="/reset-password" element={<ResetPasswordPage />} />
         <Route path="/verify-email" element={<EmailVerificationPage />} />

@@ -47,12 +47,12 @@ export function Navbar() {
         </div>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <Link to="/login" className={buttonVariants({ variant: "secondary", size: "sm" })}>
-            Resident Login
+          <Link to="/resident-login" className={buttonVariants({ variant: "secondary", size: "sm" })}>
+            Resident Portal
           </Link>
-          <a href="#contact" className={buttonVariants({ size: "sm" })}>
-            Request Assistance
-          </a>
+          <Link to="/login" className={buttonVariants({ size: "sm" })}>
+            Staff Portal
+          </Link>
         </div>
 
         <button
@@ -81,15 +81,15 @@ export function Navbar() {
             ))}
             <div className="mt-3 grid gap-3 sm:grid-cols-2">
               <Link
-                to="/login"
+                to="/resident-login"
                 className={buttonVariants({ variant: "secondary" })}
                 onClick={() => setIsOpen(false)}
               >
                 Resident Login
               </Link>
-              <a href="#contact" className={buttonVariants()} onClick={() => setIsOpen(false)}>
-                Request Assistance
-              </a>
+              <Link to="/login" className={buttonVariants()} onClick={() => setIsOpen(false)}>
+                Staff Portal
+              </Link>
             </div>
           </div>
         </div>

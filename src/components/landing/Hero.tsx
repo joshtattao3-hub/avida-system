@@ -14,9 +14,6 @@ export function Hero() {
           transition={{ duration: 0.7, ease: "easeOut" }}
           className="max-w-3xl"
         >
-          <p className="inline-flex items-center rounded-full border border-primary/15 bg-white/80 px-4 py-2 text-sm font-bold text-primary shadow-soft">
-            Premium condominium management for modern living
-          </p>
           <h1 className="mt-7 text-5xl font-extrabold tracking-normal text-secondary sm:text-6xl lg:text-7xl">
             Welcome to Avida Towers Alabang
           </h1>
@@ -25,12 +22,12 @@ export function Hero() {
             streamline operations for property management.
           </p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-            <Link to="/login" className={buttonVariants({ size: "lg" })}>
+            <Link to="/resident-login" className={buttonVariants({ size: "lg" })}>
               Resident Portal
               <ArrowRight className="h-5 w-5" />
             </Link>
-            <a href="#features" className={buttonVariants({ variant: "secondary", size: "lg" })}>
-              Learn More
+            <a href="#contact" className={buttonVariants({ variant: "secondary", size: "lg" })}>
+              Request Assistance
               <ChevronDown className="h-5 w-5" />
             </a>
           </div>

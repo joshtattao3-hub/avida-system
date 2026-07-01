@@ -36,7 +36,7 @@ export function Footer() {
           <div>
             <h2 className="text-sm font-extrabold text-secondary">Contact Information</h2>
             <div className="mt-4 grid gap-3 text-sm text-secondary/64">
-              <p className="flex items-start gap-3"><MapPin className="mt-0.5 h-4 w-4 text-primary" /> Alabang, Muntinlupa City</p>
+              <p className="flex items-start gap-3"><MapPin className="mt-0.5 h-4 w-4 text-primary" /> Alabang–Zapote Rd, cor Prime Street, New Alabang Village, Muntinlupa, 1780</p>
               <p className="flex items-center gap-3"><Phone className="h-4 w-4 text-primary" /> +63 2 8888 0000</p>
               <p className="flex items-center gap-3"><Mail className="h-4 w-4 text-primary" /> management@avidaalabang.example</p>
             </div>
